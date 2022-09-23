@@ -8,7 +8,7 @@ from Zaid.helpers.queues import get_active_chats
 @Zaid.on(events.NewMessage(pattern="^/activevoice"))
 async def activevc(message):
     mystic = await message.reply(
-        "Getting active voice chats.. Please hold"
+        "Mendapatkan obrolan suara aktif.. Harap tunggu"
     )
     served_chats = await get_active_chats()
     text = ""
@@ -25,8 +25,8 @@ async def activevc(message):
             text += f"{j + 1}. {title} [`{x}`]\n"
         j += 1
     if not text:
-        await mystic.edit("No Active Voice Chats")
+        await mystic.edit("Tidak Ada Obrolan Suara Aktif")
     else:
         await mystic.edit(
-            f"**Active Voice Chats:-**\n\n{text}"
+            f"*Obrolan Suara Aktif*:-**\n\n{text}"
         )
