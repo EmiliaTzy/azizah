@@ -27,7 +27,7 @@ async def _(e, perm):
         umm = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 6:
             bc = umm[0]
-            text = "Joining..."
+            text = "Bergabung..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await client(functions.channels.JoinChannelRequest(channel=bc))
@@ -42,16 +42,16 @@ async def _(e, perm):
 @is_admin        
 async def _(e, perm):
     chat_id = e.chat_id
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n!pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/Ihsvig1907226#\n\n!pjoin Ihsvig1907226"
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n!pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/CatatanAz#\n\n!pjoin CatatanAz"
     if e.is_group:
         umm = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
             invitelink = umm[0]
-            text = "Joining...."
+            text = "Bergabung...."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await client(ImportChatInviteRequest(invitelink))
-                await event.edit("Succesfully Joined")
+                await event.edit("Berhasil Bergabung")
             except Exception as e:
                 await event.edit(str(e))   
         else:
